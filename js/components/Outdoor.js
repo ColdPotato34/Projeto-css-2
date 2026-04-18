@@ -1,13 +1,15 @@
 export default function Outdoor() {
     const section = document.createElement('section');
     section.className = 'outdoor-section';
-    
-    section.style.backgroundImage = "url('../imagens/Outdoor.webp')";
+    section.id = 'about';
+
+    section.style.backgroundImage = "url('./Imagens/Outdoor.webp')";
 
     section.innerHTML = `
         <h1 class="outdoor-title">The Great Outdoors</h1>
         <p class="outdoor-subtitle">Wander often. Wonder always.</p>
-        <div style="margin-top: 30px; font-size: 30px;">▶</div> `;
-    
+        <a href="#explore" class="hero-cta" aria-label="Ir para a secao Explore">Start Exploring</a>
+        <div class="hero-indicator" aria-hidden="true">&#9662;</div> `;
+
     return section;
 }

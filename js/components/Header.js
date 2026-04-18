@@ -1,6 +1,7 @@
 export default function Header() {
     const header = document.createElement('header');
-    
+    header.className = 'site-header';
+
     //pin
     const pinIcon = `
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -9,7 +10,7 @@ export default function Header() {
         </svg>
     `;
 
-    // lupa 
+    // lupa
     const searchIcon = `
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right:5px; vertical-align: middle;">
             <circle cx="11" cy="11" r="8"></circle>
@@ -18,18 +19,18 @@ export default function Header() {
     `;
 
     header.innerHTML = `
-        <nav class="nav-left">
-            <a href="#">About</a>
-            <a href="#">Explore</a>
+        <nav class="nav-left" aria-label="Navegacao principal esquerda">
+            <a href="#about">About</a>
+            <a href="#explore">Explore</a>
         </nav>
-        
-        <div class="header-icon">
-            ${pinIcon}
-        </div>
 
-        <nav class="nav-right">
-            <a href="#">Journal</a>
-            <a href="#">${searchIcon} Search</a>
+        <a class="header-icon" href="#about" aria-label="Ir para o topo da pagina">
+            ${pinIcon}
+        </a>
+
+        <nav class="nav-right" aria-label="Navegacao principal direita">
+            <a href="#journal">Journal</a>
+            <a href="#search" class="search-link">${searchIcon} Search</a>
         </nav>
     `;
     return header;

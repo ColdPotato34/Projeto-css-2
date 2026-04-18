@@ -6,11 +6,16 @@ import Footer from './Footer.js';
 
 export default function Page() {
     const wrapper = document.createElement('div');
-    
+    wrapper.className = 'page-wrapper';
+
+    const main = document.createElement('main');
+    main.className = 'page-main';
+
     wrapper.appendChild(Header());
-    wrapper.appendChild(Outdoor());
-    wrapper.appendChild(Explore());
-    wrapper.appendChild(Journal());
+    main.appendChild(Outdoor());
+    main.appendChild(Explore());
+    main.appendChild(Journal());
+    wrapper.appendChild(main);
     wrapper.appendChild(Footer());
 
     return wrapper;
